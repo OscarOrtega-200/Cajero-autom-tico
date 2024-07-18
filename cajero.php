@@ -8,6 +8,7 @@ $clave = readline();
 if (verificartarjeta ($numerodetarjeta, $clave)){
      echo "Bienvenido al cajero automatico OFOR! \n";
      saldodelacuenta($numerodetarjeta);
+     retirardinero($numerodetarjeta , $montoarealizar);
     
 } else {
     echo "Tarjeta o clave invalida, intente mas tarde";
@@ -32,8 +33,19 @@ function verificartarjeta($numerodetarjeta, $clave ){
 function saldodelacuenta($numerodetarjeta){
     $saldo = 100000;
     echo "su saldo es de : $saldo";
-   
 }
+//funcion para hacer un retiro de dinero
+function retirardinero($numerodetarjeta , $montoarealizar){
+    $saldo = 100000;
+    if ( $montoarealizar <= $saldo){
+        $saldo -= $montoarealizar;
+        echo "Retiro exitoso.";
+    }else {
+        echo "Saldo insuficiente.";
+    }
+}
+
+
     
 
 
